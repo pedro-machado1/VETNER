@@ -1,4 +1,4 @@
-# 🐾 VetNER — NER Clínico Veterinário (BERTimbau)
+# VetNER — NER Clínico Veterinário (BERTimbau)
 
 Projeto para reconhecer entidades em textos clínicos veterinários em português, com fine-tuning do modelo BERTimbau usando PyTorch. A ideia é simples: treinar um classificador token-level (esquema BIO) para extrair entidades como doenças, sintomas e medicamentos em textos de anotações clínicas.
 
