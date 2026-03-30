@@ -582,6 +582,94 @@ RAW_DATA = [
      ("fluidoterapia","B-MEDICAMENTO"),("intensiva","O"),("foi","O"),
      ("iniciada","O"),("no","O"),("gato","B-ESPECIE"),("intoxicado","O"),
      ("por","O"),("lírios","O"),(".",  "O")],
+
+    [("A","O"),("reabilitação","B-TRATAMENTO"),("física","I-TRATAMENTO"),
+     ("foi","O"),("indicada","O"),("após","O"),("a","O"),("cirurgia","O"),
+     ("de","O"),("ligamento","O"),("no","O"),("cão","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("recebeu","O"),("acupuntura","B-TRATAMENTO"),
+     ("para","O"),("alívio","O"),("de","O"),("dor","B-SINTOMA"),("crônica","I-SINTOMA"),
+     ("nas","O"),("articulações","O"),(".",  "O")],
+
+    [("A","O"),("profilaxia","B-TRATAMENTO"),("antibiótica","I-TRATAMENTO"),
+     ("foi","O"),("administrada","O"),("antes","O"),("da","O"),
+     ("cirurgia","O"),("cardíaca","O"),("no","O"),("gato","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("gato","B-ESPECIE"),("foi","O"),("submetido","O"),
+     ("à","O"),("esterilização","B-TRATAMENTO"),("precoce","I-TRATAMENTO"),
+     ("aos","O"),("três","O"),("meses","O"),("de","O"),("idade","O"),(".",  "O")],
+
+    [("A","O"),("drenagem","B-TRATAMENTO"),("de","I-TRATAMENTO"),
+     ("abscessos","I-TRATAMENTO"),("foi","O"),("realizada","O"),
+     ("no","O"),("cão","B-ESPECIE"),("com","O"),("piodermite","B-DOENCA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("com","O"),("epilepsia","B-DOENCA"),
+     ("foi","O"),("submetido","O"),("a","O"),("estimulação","B-TRATAMENTO"),
+     ("neural","I-TRATAMENTO"),("vagal","I-TRATAMENTO"),("(",  "O"),("VNS","O"),
+     (")",  "O"),(".",  "O")],
+
+    [("A","O"),("cauterização","B-TRATAMENTO"),("endoscópica","I-TRATAMENTO"),
+     ("removeu","O"),("o","O"),("hemangioma","B-DOENCA"),("do","O"),
+     ("duodeno","O"),("no","O"),("gato","B-ESPECIE"),(".",  "O")],
+
+    [("Suportive","O"),("care","O"),("com","O"),("fluidos","B-TRATAMENTO"),
+     ("e","O"),("nutrição","B-TRATAMENTO"),("foi","O"),
+     ("essencial","O"),("durante","O"),("o","O"),("tratamento","O"),
+     ("da","O"),("parvovirose","B-DOENCA"),(".",  "O")],
+
+    [("A","O"),("ultrassonografia","B-TRATAMENTO"),("terapêutica","I-TRATAMENTO"),
+     ("foi","O"),("usada","O"),("para","O"),("destruição","O"),
+     ("de","O"),("tumores","B-DOENCA"),("de","I-DOENCA"),("pele","I-DOENCA"),
+     ("no","O"),("cão","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("apresentava","O"),("artrose","B-DOENCA"),
+     ("avançada","I-DOENCA"),("e","O"),("recebeu","O"),
+     ("infiltração","B-TRATAMENTO"),("articular","I-TRATAMENTO"),
+     ("de","I-TRATAMENTO"),("ácido","B-MEDICAMENTO"),("hialurônico","I-MEDICAMENTO"),(".",  "O")],
+
+    [("A","O"),("amputação","B-TRATAMENTO"),("de","I-TRATAMENTO"),
+     ("cauda","I-TRATAMENTO"),("foi","O"),("necessária","O"),
+     ("no","O"),("gato","B-ESPECIE"),("com","O"),("trauma","B-DOENCA"),
+     ("severo","I-DOENCA"),(".",  "O")],
+
+    [("A","O"),("plastyplastia","B-TRATAMENTO"),("de","I-TRATAMENTO"),
+     ("pálato","I-TRATAMENTO"),("foi","O"),("realizada","O"),
+     ("no","O"),("bulldog","B-ESPECIE"),("com","O"),
+     ("síndrome","B-DOENCA"),("braquicéfala","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("recebeu","O"),("fototerapia","B-TRATAMENTO"),
+     ("com","O"),("laser","O"),("para","O"),("cicatrização","O"),
+     ("de","O"),("ferida","B-DOENCA"),("traumática","I-DOENCA"),(".",  "O")],
+
+    [("A","O"),("castração","B-TRATAMENTO"),("química","I-TRATAMENTO"),
+     ("com","O"),("deslorelina","B-MEDICAMENTO"),("foi","O"),("uma","O"),
+     ("alternativa","O"),("considerada","O"),("no","O"),("gato","B-ESPECIE"),(".",  "O")],
+
+    [("A","O"),("antiotoxina","B-TRATAMENTO"),("foi","O"),("administrada","O"),
+     ("imediatamente","O"),("no","O"),("cão","B-ESPECIE"),("com","O"),
+     ("intoxicação","B-DOENCA"),("tetânica","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("com","O"),("sarna","B-DOENCA"),
+     ("demodécica","I-DOENCA"),("foi","O"),("submetido","O"),
+     ("a","O"),("múltiplos","O"),("banhos","B-TRATAMENTO"),
+     ("acaricidas","I-TRATAMENTO"),("semanais","I-TRATAMENTO"),(".",  "O")],
+
+    [("A","O"),("ressonância","B-TRATAMENTO"),("magnética","I-TRATAMENTO"),
+     ("revelou","O"),("uma","O"),("hérnia","B-DOENCA"),("discal","I-DOENCA"),
+     ("no","O"),("gato","B-ESPECIE"),(".",  "O")],
+
+    [("A","O"),("pneumopeonia","B-TRATAMENTO"),("foi","O"),("utilizada","O"),
+     ("como","O"),("técnica","O"),("diagnóstica","O"),("em","O"),
+     ("suspeita","O"),("de","O"),("peritonite","B-DOENCA"),("infecciosa","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("idoso","O"),("com","O"),
+     ("insuficiência","B-DOENCA"),("cardíaca","I-DOENCA"),("recebeu","O"),
+     ("oxigenoterapia","B-TRATAMENTO"),("contínua","I-TRATAMENTO"),
+     ("durante","O"),("hospitalização","O"),(".",  "O")],
+
+    [("A","O"),("flebotomia","B-TRATAMENTO"),("terapêutica","I-TRATAMENTO"),
+     ("removeu","O"),("sangue","O"),("para","O"),("reduzir","O"),
+     ("a","O"),("poliglobulia","B-DOENCA"),("no","O"),("gato","B-ESPECIE"),(".",  "O")],
 ]
 
 

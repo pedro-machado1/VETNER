@@ -14,10 +14,10 @@ from evaluate import evaluate
 
 DEVICE      = "cuda" if torch.cuda.is_available() else "cpu"
 EPOCHS      = 30
-BATCH_SIZE  = 2      # dataset pequeno
-LR          = 3e-5   # learning rate padrão pra fine-tuning de BERT
+BATCH_SIZE  = 2 
+LR          = 3e-5   # learning rate padrão 
 WARMUP_FRAC = 0.1    # 10% dos steps como warmup
-PATIENCE    = 5     # para se não melhorar por 5 épocas
+PATIENCE    = 4     # para se não melhorar por 4 épocas
 CKPT_DIR    = Path("checkpoints")
 MODEL_NAME  = "neuralmind/bert-base-portuguese-cased"
 
@@ -35,7 +35,7 @@ def train():
     train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
     val_loader   = DataLoader(val_ds, batch_size=BATCH_SIZE)
 
-    model = BertNER(model_name=MODEL_NAME).to(DEVICE)
+    model = BertNER(model_name=MODEL_NAME, use_class_weights=True).to(DEVICE)
     model.count_params()
 
     # weight decay 

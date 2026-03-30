@@ -10,17 +10,24 @@ from data import LABELS
 
 class BertNER(nn.Module):
     def __init__(self, model_name="neuralmind/bert-base-portuguese-cased",
-                 num_labels=len(LABELS), dropout=0.1):
+                 num_labels=len(LABELS), dropout=0.1, use_class_weights=False):
 
         super().__init__()
         self.num_labels = num_labels
+        self.use_class_weights = use_class_weights
 
         # Uversão padrão do BERTimbau com saída de atenção habilitada.
         self.bert = BertModel.from_pretrained(model_name, output_attentions=True)
         self.dropout = nn.Dropout(dropout)
 
-        # Projetando para as classes 
         self.classifier = nn.Linear(self.bert.config.hidden_size, num_labels)
+        
+        # Pesos de classe para balancear
+        if use_class_weights:
+            self.class_weights = torch.tensor(
+                [0.032, 0.258, 0.329, 0.263, 0.499, 0.599, 4.989, 0.277, 2.494, 1.274, 1.247],
+                dtype=torch.float32
+            )
 
     def forward(self, input_ids, attention_mask, token_type_ids, labels=None):
         output = self.bert(
@@ -36,7 +43,13 @@ class BertNER(nn.Module):
         loss = None
         if labels is not None:
             # -100 é ignorado 
-            loss_fn = nn.CrossEntropyLoss(ignore_index=-100)
+            if self.use_class_weights:
+                loss_fn = nn.CrossEntropyLoss(
+                    weight=self.class_weights.to(logits.device),
+                    ignore_index=-100
+                )
+            else:
+                loss_fn = nn.CrossEntropyLoss(ignore_index=-100)
             loss = loss_fn(logits.view(-1, self.num_labels), labels.view(-1))
 
         return {
