@@ -1,0 +1,22 @@
+# Ignore Python bytecode and cache files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+.venv/
+venv/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore output and checkpoint directories
+outputs/
+checkpoints/
+
+# Ignore checkpoints and output history
+checkpoints/
+outputs/history.json

@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  vet-ner:
+    build: .
+    container_name: vet-ner
+    volumes:
+      - ./checkpoints:/app/checkpoints
+      - ./outputs:/app/outputs
+    environment:
+      - PYTHONUNBUFFERED=1
+    tty: true

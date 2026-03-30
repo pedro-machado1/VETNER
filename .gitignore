@@ -1,0 +1,21 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Outputs, logs and model checkpoints (keep if you intentionally version checkpoints)
+outputs/
+
+# Editor configs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
