@@ -27,13 +27,16 @@ def train():
     CKPT_DIR.mkdir(exist_ok=True)
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=True)
-    train_data, val_data = get_splits()
+    # 36 exemplos para validação
+    train_data, val_data, test_data = get_splits(val_size=36)
 
     train_ds = VetNERDataset(train_data, tokenizer)
     val_ds   = VetNERDataset(val_data, tokenizer)
+    test_ds  = VetNERDataset(test_data, tokenizer)
 
     train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
     val_loader   = DataLoader(val_ds, batch_size=BATCH_SIZE)
+    test_loader  = DataLoader(test_ds, batch_size=BATCH_SIZE)
 
     model = BertNER(model_name=MODEL_NAME, use_class_weights=True).to(DEVICE)
     model.count_params()
@@ -113,6 +116,20 @@ def train():
 
     print(f"\nTreino finalizado. Melhor F1 macro: {best_f1:.4f}")
     print(f"Checkpoint em: {CKPT_DIR}/best_model.pt")
+
+    # Avaliação final no conjunto de teste usando o melhor checkpoint salvo
+    best_ckpt = CKPT_DIR / "best_model.pt"
+    if best_ckpt.exists():
+        best_model = BertNER(model_name=MODEL_NAME, use_class_weights=True).to(DEVICE)
+        best_model.load_state_dict(torch.load(best_ckpt, map_location=DEVICE))
+        test_metrics = evaluate(best_model, test_loader, DEVICE)
+        with open("outputs/test_metrics.json", "w") as f:
+            json.dump(test_metrics, f, indent=2)
+        print(f"\nAvaliação final (teste) — F1: {test_metrics['f1_macro']:.4f} | "
+              f"Precision: {test_metrics['precision']:.4f} | Recall: {test_metrics['recall']:.4f}")
+        print("Métricas de teste salvas em outputs/test_metrics.json")
+    else:
+        print("Aviso: melhor checkpoint não encontrado — pulando avaliação final no teste.")
 
 
 if __name__ == "__main__":

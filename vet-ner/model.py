@@ -22,10 +22,10 @@ class BertNER(nn.Module):
 
         self.classifier = nn.Linear(self.bert.config.hidden_size, num_labels)
         
-        # Pesos de classe para balancear
+        # Pesos de classe para 
         if use_class_weights:
             self.class_weights = torch.tensor(
-                [0.032, 0.258, 0.329, 0.263, 0.499, 0.599, 4.989, 0.277, 2.494, 1.274, 1.247],
+                [0.03506006300449371, 0.27678996324539185, 0.35321706533432007, 0.3053618371486664, 0.5259009599685669, 0.6761583685874939, 3.640852689743042, 0.283419668674469, 3.640852689743042, 1.2455549240112305, 1.2792185544967651],
                 dtype=torch.float32
             )
 

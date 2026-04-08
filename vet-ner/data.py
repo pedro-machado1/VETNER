@@ -670,6 +670,176 @@ RAW_DATA = [
     [("A","O"),("flebotomia","B-TRATAMENTO"),("terapêutica","I-TRATAMENTO"),
      ("removeu","O"),("sangue","O"),("para","O"),("reduzir","O"),
      ("a","O"),("poliglobulia","B-DOENCA"),("no","O"),("gato","B-ESPECIE"),(".",  "O")],
+
+    # ── NOVOS EXEMPLOS (+ 40) ────────────────────────────────────
+    [("O","O"),("cão","B-ESPECIE"),("apresentou","O"),("ptialismo","B-SINTOMA"),
+     ("e","O"),("dificuldade","B-SINTOMA"),("para","O"),("deglutir","I-SINTOMA"),
+     ("sugestivos","O"),("de","O"),("raiva","B-DOENCA"),(".",  "O")],
+
+    [("O","O"),("gato","B-ESPECIE"),("foi","O"),("vacinado","O"),("contra","O"),
+     ("calicivírus","B-DOENCA"),(",","O"),("herpesvírus","B-DOENCA"),("e","O"),
+     ("panleucopenia","B-DOENCA"),(".",  "O")],
+
+    [("O","O"),("felino","B-ESPECIE"),("apresentou","O"),("ulceração","B-SINTOMA"),
+     ("oral","I-SINTOMA"),("e","O"),("hipersalivação","B-SINTOMA"),
+     ("compatíveis","O"),("com","O"),("calicivirose","B-DOENCA"),(".",  "O")],
+
+    [("Interferona","B-MEDICAMENTO"),("oral","O"),("foi","O"),("prescrita","O"),
+     ("para","O"),("o","O"),("gato","B-ESPECIE"),("com","O"),
+     ("calicivirose","B-DOENCA"),("recorrente","O"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("desenvolveu","O"),("poliartrite","B-DOENCA"),
+     ("com","O"),("claudicação","B-SINTOMA"),("e","O"),("febre","B-SINTOMA"),
+     ("após","O"),("infecção","B-DOENCA"),("bacteriana","I-DOENCA"),(".",  "O")],
+
+    [("Carprofeno","B-MEDICAMENTO"),("foi","O"),("administrado","O"),
+     ("para","O"),("controle","O"),("da","O"),("dor","B-SINTOMA"),
+     ("e","O"),("inflamação","B-SINTOMA"),("articular","I-SINTOMA"),
+     ("no","O"),("cão","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("cavalo","B-ESPECIE"),("apresentou","O"),("cólica","B-DOENCA"),
+     ("obstrutiva","I-DOENCA"),("com","O"),("dor","B-SINTOMA"),
+     ("abdominal","I-SINTOMA"),("intensa","I-SINTOMA"),(".",  "O")],
+
+    [("A","O"),("lavagem","B-TRATAMENTO"),("intestinal","I-TRATAMENTO"),
+     ("foi","O"),("realizada","O"),("no","O"),("cavalo","B-ESPECIE"),
+     ("com","O"),("impactação","B-DOENCA"),("cecal","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("bovino","B-ESPECIE"),("apresentou","O"),("sialorréia","B-SINTOMA"),
+     ("e","O"),("vesículas","B-SINTOMA"),("nas","O"),("gengivas","O"),
+     ("suspeitas","O"),("de","O"),("febre","B-DOENCA"),("aftosa","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("caprino","B-ESPECIE"),("foi","O"),("diagnosticado","O"),
+     ("com","O"),("linfadenite","B-DOENCA"),("caseosa","I-DOENCA"),
+     ("e","O"),("encaminhado","O"),("para","O"),("isolamento","B-TRATAMENTO"),(".",  "O")],
+
+    [("A","O"),("calopsita","B-ESPECIE"),("apresentou","O"),("penas","B-SINTOMA"),
+     ("arrepiadas","I-SINTOMA"),(",","O"),("perda","B-SINTOMA"),("de","I-SINTOMA"),
+     ("peso","I-SINTOMA"),("e","O"),("diarreia","B-SINTOMA"),(".",  "O")],
+
+    [("Enrofloxacino","B-MEDICAMENTO"),("foi","O"),("prescrito","O"),("para","O"),
+     ("tratar","O"),("infecção","B-DOENCA"),("respiratória","I-DOENCA"),
+     ("na","O"),("calopsita","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("hamster","B-ESPECIE"),("apresentou","O"),("prolapso","B-DOENCA"),
+     ("retal","I-DOENCA"),("com","O"),("tenesmo","B-SINTOMA"),
+     ("e","O"),("diarreia","B-SINTOMA"),("persistente","I-SINTOMA"),(".",  "O")],
+
+    [("A","O"),("esplenomegalia","B-SINTOMA"),("e","O"),("linfadenopatia","B-SINTOMA"),
+     ("foram","O"),("identificadas","O"),("no","O"),("gato","B-ESPECIE"),
+     ("com","O"),("leucemia","B-DOENCA"),("felina","I-DOENCA"),(".",  "O")],
+
+    [("Zidovudina","B-MEDICAMENTO"),("foi","O"),("utilizada","O"),("no","O"),
+     ("felino","B-ESPECIE"),("com","O"),("leucemia","B-DOENCA"),
+     ("viral","I-DOENCA"),("felina","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("apresentou","O"),("descarga","B-SINTOMA"),
+     ("ocular","I-SINTOMA"),("bilateral","I-SINTOMA"),("e","O"),("tosse","B-SINTOMA"),
+     ("sugestivos","O"),("de","O"),("cinomose","B-DOENCA"),(".",  "O")],
+
+    [("Ribavirin","B-MEDICAMENTO"),("e","O"),("suporte","B-TRATAMENTO"),
+     ("intensivo","I-TRATAMENTO"),("foram","O"),("indicados","O"),
+     ("no","O"),("cão","B-ESPECIE"),("com","O"),("cinomose","B-DOENCA"),
+     ("neurológica","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("coelho","B-ESPECIE"),("apresentou","O"),("paralisia","B-SINTOMA"),
+     ("dos","I-SINTOMA"),("membros","I-SINTOMA"),("posteriores","I-SINTOMA"),
+     ("após","O"),("infecção","O"),("por","O"),("Encephalitozoon","B-DOENCA"),("cuniculi","I-DOENCA"),(".",  "O")],
+
+    [("Fenbendazol","B-MEDICAMENTO"),("foi","O"),("prescrito","O"),
+     ("para","O"),("o","O"),("coelho","B-ESPECIE"),("com","O"),
+     ("encefalitozoose","B-DOENCA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("desenvolveu","O"),("glomerulonefrite","B-DOENCA"),
+     ("com","O"),("proteinúria","B-SINTOMA"),("e","O"),("edema","B-SINTOMA"),
+     ("subcutâneo","I-SINTOMA"),(".",  "O")],
+
+    [("Micofenolato","B-MEDICAMENTO"),("mofetil","I-MEDICAMENTO"),("foi","O"),
+     ("introduzido","O"),("para","O"),("nefrite","B-DOENCA"),
+     ("imunomediada","I-DOENCA"),("no","O"),("cão","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("gato","B-ESPECIE"),("apresentou","O"),("alcalose","B-DOENCA"),
+     ("metabólica","I-DOENCA"),("com","O"),("fraqueza","B-SINTOMA"),
+     ("muscular","I-SINTOMA"),("após","O"),("vômitos","B-SINTOMA"),("prolongados","I-SINTOMA"),(".",  "O")],
+
+    [("A","O"),("fluidoterapia","B-TRATAMENTO"),("com","O"),("solução","O"),
+     ("de","O"),("Ringer","B-MEDICAMENTO"),("lactato","I-MEDICAMENTO"),("foi","O"),
+     ("iniciada","O"),("no","O"),("gato","B-ESPECIE"),("desidratado","O"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("foi","O"),("diagnosticado","O"),("com","O"),
+     ("melanoma","B-DOENCA"),("oral","I-DOENCA"),("após","O"),("biópsia","B-TRATAMENTO"),
+     ("da","O"),("lesão","O"),("gengival","O"),(".",  "O")],
+
+    [("Imunoterapia","B-TRATAMENTO"),("com","O"),("vacina","B-MEDICAMENTO"),
+     ("anti-melanoma","I-MEDICAMENTO"),("foi","O"),("recomendada","O"),
+     ("para","O"),("o","O"),("cão","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("filhote","B-ESPECIE"),("apresentou","O"),("icterícia","B-SINTOMA"),
+     ("neonatal","I-SINTOMA"),("e","O"),("anemia","B-DOENCA"),
+     ("por","I-DOENCA"),("incompatibilidade","I-DOENCA"),("sanguínea","I-DOENCA"),(".",  "O")],
+
+    [("Transfusão","B-TRATAMENTO"),("de","I-TRATAMENTO"),("sangue","I-TRATAMENTO"),
+     ("e","O"),("suporte","B-TRATAMENTO"),("intensivo","I-TRATAMENTO"),("foram","O"),
+     ("necessários","O"),("no","O"),("neonato","B-ESPECIE"),("anêmico","O"),(".",  "O")],
+
+    [("O","O"),("peixe","B-ESPECIE"),("ornamental","I-ESPECIE"),("apresentou","O"),
+     ("manchas","B-SINTOMA"),("brancas","I-SINTOMA"),("no","O"),("corpo","O"),
+     ("compatíveis","O"),("com","O"),("ich","B-DOENCA"),(".",  "O")],
+
+    [("Tratamento","O"),("com","O"),("cloreto","B-MEDICAMENTO"),("de","I-MEDICAMENTO"),
+     ("sódio","I-MEDICAMENTO"),("e","O"),("malachita","B-MEDICAMENTO"),("verde","I-MEDICAMENTO"),
+     ("foi","O"),("aplicado","O"),("no","O"),("peixe","B-ESPECIE"),("com","O"),
+     ("ich","B-DOENCA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("foi","O"),("trazido","O"),("com","O"),
+     ("epistaxe","B-SINTOMA"),("bilateral","I-SINTOMA"),("e","O"),("hifema","B-SINTOMA"),
+     ("compatíveis","O"),("com","O"),("hipertensão","B-DOENCA"),("sistêmica","I-DOENCA"),(".",  "O")],
+
+    [("Anlodipino","B-MEDICAMENTO"),("foi","O"),("prescrito","O"),("para","O"),
+     ("controle","O"),("da","O"),("hipertensão","B-DOENCA"),
+     ("arterial","I-DOENCA"),("no","O"),("felino","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("apresentou","O"),("dermatite","B-DOENCA"),
+     ("por","I-DOENCA"),("Malassezia","I-DOENCA"),("com","O"),
+     ("eritema","B-SINTOMA"),("e","O"),("odor","B-SINTOMA"),("fétido","I-SINTOMA"),(".",  "O")],
+
+    [("Shampoo","O"),("com","O"),("miconazol","B-MEDICAMENTO"),("e","O"),
+     ("clorexidina","B-MEDICAMENTO"),("foi","O"),("prescrito","O"),
+     ("para","O"),("o","O"),("cão","B-ESPECIE"),("com","O"),
+     ("piodermite","B-DOENCA"),("superficial","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("equino","B-ESPECIE"),("apresentou","O"),("laminite","B-DOENCA"),
+     ("aguda","I-DOENCA"),("com","O"),("claudicação","B-SINTOMA"),
+     ("e","O"),("pulso","B-SINTOMA"),("digital","I-SINTOMA"),("aumentado","I-SINTOMA"),(".",  "O")],
+
+    [("Fenilbutazona","B-MEDICAMENTO"),("foi","O"),("administrada","O"),("para","O"),
+     ("alívio","O"),("da","O"),("dor","B-SINTOMA"),("na","O"),
+     ("laminite","B-DOENCA"),("do","O"),("equino","B-ESPECIE"),(".",  "O")],
+
+    [("O","O"),("gato","B-ESPECIE"),("apresentou","O"),("síndrome","B-DOENCA"),
+     ("vestibular","I-DOENCA"),("idiopática","I-DOENCA"),("com","O"),
+     ("head","B-SINTOMA"),("tilt","I-SINTOMA"),("e","O"),("ataxia","B-SINTOMA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("desenvolveu","O"),("miocardite","B-DOENCA"),
+     ("após","O"),("infecção","O"),("por","O"),("Trypanosoma","B-DOENCA"),("cruzi","I-DOENCA"),
+     (",","O"),("apresentando","O"),("arritmia","B-SINTOMA"),(".",  "O")],
+
+    [("Benznidazol","B-MEDICAMENTO"),("foi","O"),("prescrito","O"),("para","O"),
+     ("o","O"),("cão","B-ESPECIE"),("com","O"),("doença","B-DOENCA"),
+     ("de","I-DOENCA"),("Chagas","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("felino","B-ESPECIE"),("apresentou","O"),("tromboembolismo","B-DOENCA"),
+     ("aórtico","I-DOENCA"),("com","O"),("paralisia","B-SINTOMA"),
+     ("aguda","I-SINTOMA"),("dos","I-SINTOMA"),("membros","I-SINTOMA"),("pélvicos","I-SINTOMA"),(".",  "O")],
+
+    [("Heparina","B-MEDICAMENTO"),("e","O"),("clopidogrel","B-MEDICAMENTO"),
+     ("foram","O"),("utilizados","O"),("no","O"),("gato","B-ESPECIE"),
+     ("com","O"),("tromboembolismo","B-DOENCA"),("aórtico","I-DOENCA"),(".",  "O")],
+
+    [("O","O"),("cão","B-ESPECIE"),("apresentou","O"),("piometra","B-DOENCA"),
+     ("fechada","I-DOENCA"),("com","O"),("distensão","B-SINTOMA"),
+     ("abdominal","I-SINTOMA"),("e","O"),("vômitos","B-SINTOMA"),
+     ("após","O"),("diestro","O"),(".",  "O")],
 ]
 
 
@@ -719,12 +889,53 @@ class VetNERDataset(Dataset):
         }
 
 
-def get_splits(data=RAW_DATA, train_ratio=0.85, seed=42):
+def get_splits(data=RAW_DATA, train_ratio=0.85, test_ratio=0.10, val_size: int | None = None, seed=42):
+    
+    if train_ratio < 0 or test_ratio < 0:
+        raise ValueError("train_ratio and test_ratio must be non-negative")
+
     random.seed(seed)
     shuffled = data.copy()
     random.shuffle(shuffled)
-    cut = int(len(shuffled) * train_ratio)
-    return shuffled[:cut], shuffled[cut:]
+
+    n = len(shuffled)
+
+    # Se val_size foi especificado, garante exatamente essa quantidade (quando possível)
+    if val_size is not None:
+        v = max(0, int(val_size))
+        if v >= n:
+            # tudo como validação (caso extremo)
+            return [], [], shuffled[:n]
+
+        remaining = n - v
+        sum_ratios = train_ratio + test_ratio
+        if sum_ratios <= 0:
+            train_part = remaining
+            test_part = 0
+        else:
+            train_part = int(round(remaining * (train_ratio / sum_ratios)))
+            test_part = remaining - train_part
+
+        cut_train = train_part
+        cut_test = cut_train + test_part
+
+        train = shuffled[:cut_train]
+        test = shuffled[cut_train:cut_test]
+        val = shuffled[cut_test:]
+        return train, val, test
+
+    # --- modo por razões (frações) ---
+    if train_ratio + test_ratio >= 1.0:
+        raise ValueError("train_ratio + test_ratio must be < 1.0 when val_size is not provided")
+
+    cut_train = int(n * train_ratio)
+    cut_test = int(n * (train_ratio + test_ratio))
+
+    train = shuffled[:cut_train]
+    test = shuffled[cut_train:cut_test]
+    val = shuffled[cut_test:]
+
+    return train, val, test
 
 
 def save_dataset(path="data/dataset.json"):
@@ -737,7 +948,7 @@ def save_dataset(path="data/dataset.json"):
 if __name__ == "__main__":
     save_dataset()
     tokenizer = AutoTokenizer.from_pretrained('neuralmind/bert-base-portuguese-cased')
-    train, val = get_splits()
+    train, val = get_splits() # type: ignore
     print(f"Treino: {len(train)} | Validação: {len(val)}")
     ds = VetNERDataset(train, tokenizer)
     sample = ds[0]

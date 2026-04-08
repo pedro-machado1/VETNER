@@ -52,13 +52,23 @@ O pipeline do projeto é dividido em:
 
 ## Tamanho do Dataset
 
-O dataset utilizado no projeto contém **436 exemplos anotados** no formato BIO, distribuídos entre as seguintes classes de entidades:
+O dataset contém **187 frases anotadas manualmente** no formato BIO, divididas em:
 
-- **DOENÇA**: 120 exemplos
-- **SINTOMA**: 150 exemplos
-- **MEDICAMENTO**: 80 exemplos
-- **ESPÉCIE**: 39 exemplos
-- **TRATAMENTO**: 47 exemplos
+| Split      | Frases |
+|:-----------|:------:|
+| Treino     | 135    |
+| Validação  | 36     |
+| Teste      | 16     |
+
+Distribuição de entidades (contagem de spans `B-`):
+
+| Entidade      | Spans |
+|:--------------|:-----:|
+| `DOENCA`      | 171   |
+| `ESPECIE`     | 167   |
+| `SINTOMA`     | 155   |
+| `TRATAMENTO`  | 76    |
+| `MEDICAMENTO` | 70    |
 ## Estrutura do projeto
 
 ```
@@ -168,24 +178,58 @@ docker-compose up --build
     
 ## Resultados
 
-Métricas obtidas no epoch de melhor desempenho (epoch 14), avaliadas por span no conjunto de validação.
+### Evolução do treino
+
+A cada época, o modelo é avaliado no conjunto de **validação (36 frases)**, que é usado para monitorar o progresso, salvar o melhor checkpoint e acionar o early stopping — portanto essas frases fazem parte do processo de treino. O treino parou na época 12 por early stopping (patience=4 sem melhora após a época 8).
+
+| Época | Loss     | Precision | Recall | F1 Macro |
+|:-----:|:--------:|:---------:|:------:|:--------:|
+| 1     | 2.2056   | 0.000     | 0.000  | 0.000    |
+| 2     | 1.1831   | 0.200     | 0.015  | 0.028    |
+| 3     | 0.3048   | 0.787     | 0.828  | 0.807    |
+| 4     | 0.0832   | 0.823     | 0.866  | 0.844    |
+| 5     | 0.0417   | 0.873     | 0.873  | 0.873    |
+| 6     | 0.0387   | 0.852     | 0.858  | 0.855    |
+| 7     | 0.0083   | 0.892     | 0.866  | 0.879    |
+| **8** | **0.0057** | **0.930** | **0.896** | **0.913** ← melhor |
+| 9     | 0.0052   | 0.895     | 0.888  | 0.891    |
+| 10    | 0.0041   | 0.877     | 0.903  | 0.890    |
+| 11    | 0.0023   | 0.908     | 0.888  | 0.898    |
+| 12    | 0.0019   | 0.902     | 0.888  | 0.895    |
+
+### Validação — melhor checkpoint (época 8)
+
+Métricas por span no conjunto de validação (36 frases usadas durante o treino para monitoramento e early stopping).
 
 | Entidade      | Precision | Recall | F1    |
 |:--------------|:---------:|:------:|:-----:|
-| `ESPECIE`     | 1.000     | 0.950  | 0.974 |
-| `DOENCA`      | 0.947     | 0.947  | 0.947 |
-| `SINTOMA`     | 0.923     | 0.923  | 0.923 |
-| `MEDICAMENTO` | 0.875     | 1.000  | 0.933 |
-| `TRATAMENTO`  | 0.833     | 0.556  | 0.667 |
-| **Macro**     | **0.936** | **0.901** | **0.918** |
+| `ESPECIE`     | 1.000     | 0.970  | 0.985 |
+| `SINTOMA`     | 0.978     | 0.936  | 0.957 |
+| `DOENCA`      | 0.839     | 0.897  | 0.867 |
+| `MEDICAMENTO` | 0.909     | 0.833  | 0.870 |
+| `TRATAMENTO`  | 0.800     | 0.615  | 0.696 |
+| **Macro**     | **0.930** | **0.896** | **0.913** |
 
 **Parâmetros do melhor checkpoint:**
 
 | Parâmetro | Valor    |
 |:----------|:--------:|
-| Epoch     | 14       |
-| Loss      | 0.001470 |
-| F1 Macro  | 0.9182   |
+| Época     | 8        |
+| Loss      | 0.005725 |
+| F1 Macro  | 0.9125   |
 
-O modelo atinge F1 macro de **0.918**, com desempenho sólido em quatro das cinco classes. A entidade `TRATAMENTO` apresenta recall inferior (0.556) devido à sua menor representatividade no dataset.
+### Teste — avaliação final (frases nunca vistas)
+
+Após o treino, o melhor checkpoint é carregado e avaliado no conjunto de **teste (16 frases)**, que nunca foram usadas em nenhuma etapa do treino. Essa é a medida mais honesta do desempenho real do modelo.
+
+| Entidade      | Precision | Recall | F1    |
+|:--------------|:---------:|:------:|:-----:|
+| `ESPECIE`     | 1.000     | 1.000  | 1.000 |
+| `MEDICAMENTO` | 1.000     | 1.000  | 1.000 |
+| `DOENCA`      | 0.875     | 0.875  | 0.875 |
+| `TRATAMENTO`  | 0.625     | 0.833  | 0.714 |
+| `SINTOMA`     | 0.722     | 0.813  | 0.765 |
+| **Macro**     | **0.831** | **0.891** | **0.860** |
+
+O modelo atinge F1 macro de **0.913** na validação e **0.860** no teste. A entidade `TRATAMENTO` é a mais desafiadora, com menor representatividade no dataset.
 

@@ -100,7 +100,9 @@ def plot_attention(attentions, sub_tokens, layer=-1, head=0,
                     fontsize=6, color=color)
 
     plt.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
-    ax.set_title(f"{title}\nCamada {layer} | Cabeça {head}", fontsize=11)
+    num_layers = len(attentions)
+    layer_display = num_layers + layer if layer < 0 else layer + 1
+    ax.set_title(f"{title}\nCamada {layer_display} | Cabeça {head + 1}", fontsize=11)
     ax.set_xlabel("Key (token atendido)")
     ax.set_ylabel("Query (token que atende)")
     plt.tight_layout()
